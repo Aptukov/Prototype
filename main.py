@@ -9,6 +9,12 @@ train_data = pd.read_csv('gazeta_train.jsonl',on_bad_lines='skip')
 test_data = pd.read_csv('gazeta_test.jsonl',on_bad_lines='skip')
 val_data = pd.read_csv('gazeta_val.jsonl',on_bad_lines='skip')
 
+# Объединяем значения из всех столбцов в одну строку
+train_data['text'] = train_data.apply(lambda row: ' '.join(row.values.astype(str)), axis=1)
+train_data = train_data['text']
+
+value = train_data.iloc[0]
+
 # Инициализация экстрактивного суммаризатора
 extractive_summarizer = Summarizer()
 
@@ -41,6 +47,11 @@ for i in range(len(predicted_summaries)):
 
 # Добавление результатов Bert score в датафрейм
 data['bert_score'] = bert_scores
+
+# Предполагаем, что у вас уже есть заполненный столбец 'bert_score' в вашем датафрейме data
+average_bert_score = data['bert_score'].mean()
+
+print(f'Средний результат метрики Bert score: {average_bert_score}')
 
 # Сохранение результата в новый файл
 data.to_csv('news_with_predicted_summaries.csv', index=False)
