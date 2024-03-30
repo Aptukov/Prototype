@@ -1,3 +1,3 @@
 # Prototype
-Готовый прототип суммаризатора сообщений. Использованный набор данных: geo-reviews-dataset-2023.tskv (сборник отзывов, краткую выжимку которых осуществляет суммаризатор).
-Ссылка на скачивание набора данных - https://github.com/yandex/geo-reviews-dataset-2023.
+Готовый прототип суммаризатора сообщений. Использованные наборы данных: gazeta_train.jsonl, gazeta_test.jsonl, gazeta_val.jsonl.
+Ссылка на скачивание набора данных - https://huggingface.co/datasets/IlyaGusev/gazeta/tree/main.
