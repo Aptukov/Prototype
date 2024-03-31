@@ -21,7 +21,7 @@ from sklearn.svm import LinearSVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
 
-# Считывание данных из файлов
+# Считывание данных из файла
 with open('gazeta_train.jsonl', 'r', encoding='utf-8') as file:
     train = file.readlines()
 train_json = [json.loads(line) for line in train]
