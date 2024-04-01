@@ -130,7 +130,7 @@ for index, row in train_data.iterrows():
     reference_summary = row['summary']
 
     # BLEU score
-    smoothing_function = SmoothingFunction().method2
+    smoothing_function = SmoothingFunction().method1
     bleu_score = sentence_bleu([reference_summary.split()], predicted_summary.split(),
                                smoothing_function=smoothing_function)
     bleu_scores.append(bleu_score)
