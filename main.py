@@ -143,7 +143,7 @@ for index, row in train_data.iterrows():
 # Вычисление среднего значения метрик
 mean_bleu = sum(bleu_scores) / len(bleu_scores)
 mean_rouge_l = sum(mean_rouge_l_scores) / len(mean_rouge_l_scores)
-bert_score = sum([score[2].item() for score in bert_scores]) / len(bert_scores)
+bert_score = sum([score[1].item() for score in bert_scores]) / len(bert_scores)
 
 # Выводим результаты всех метрик
 print("Результат метрики Mean BLEU Score:", mean_bleu) # 0.08
